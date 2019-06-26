@@ -148,7 +148,6 @@ class Erratum(ErrataConnector):
         self._product = kwargs['product']
         self._release = kwargs['release']
         self.update(**kwargs)
-        self.batch_id = None
         if 'solution' not in kwargs:
             self.solution = self.fmt("Before applying this update, \
 make sure all previously released errata relevant to your system \
@@ -217,10 +216,6 @@ https://access.redhat.com/articles/11258")
                 cur = str(cur).split()[0]
                 if self.release_date > cur:
                     self.embargoed = True
-
-            # batch
-            if 'batch_id' in erratum:
-                self.batch_id = erratum['batch_id']
 
             # Target Ship date
             d = erratum['publish_date_override']

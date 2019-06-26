@@ -79,9 +79,6 @@ class TestAdvisory(object):
     def test_age(self, advisory):
         assert advisory.age == 146
 
-    def test_batch_none(self, advisory):
-        assert advisory.batch_id is None
-
     def test_errata_bugs(self, advisory):
         # Only sanity-check one for brevity.
         assert 1253486 in advisory.errata_bugs
