@@ -1,7 +1,7 @@
-import sys
-import pytest
 from errata_tool.cli import main
 from errata_tool.release import NoReleaseFoundError
+import pytest
+import sys
 
 
 class FakeRelease(object):
