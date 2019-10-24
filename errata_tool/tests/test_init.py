@@ -1,5 +1,6 @@
 import errata_tool
-from errata_tool import ErrataConnector, security
+from errata_tool import ErrataConnector
+from errata_tool import security
 
 
 class TestInit(object):
