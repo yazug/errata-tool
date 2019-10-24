@@ -1,7 +1,7 @@
 from errata_tool.connector import ErrataConnector
 from errata_tool.release import NoReleaseFoundError
-import posixpath
 from errata_tool.release import Release
+import posixpath
 import sys
 
 
