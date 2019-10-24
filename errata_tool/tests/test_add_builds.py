@@ -1,6 +1,6 @@
-import requests
-import pytest
 from errata_tool import ErrataException
+import pytest
+import requests
 
 
 class TestAddBuilds(object):
