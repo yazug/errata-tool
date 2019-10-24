@@ -1,7 +1,7 @@
 from datetime import date
-import requests
-from errata_tool.release import Release
 from errata_tool.connector import ErrataConnector
+from errata_tool.release import Release
+import requests
 
 
 class TestGet(object):
