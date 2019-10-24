@@ -1,5 +1,6 @@
 from __future__ import print_function
 import sys
+
 from datetime import date
 from errata_tool import ErrataConnector
 from errata_tool.product import Product
