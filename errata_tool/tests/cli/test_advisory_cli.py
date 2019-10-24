@@ -1,6 +1,6 @@
-import sys
-import pytest
 from errata_tool.cli import main
+import pytest
+import sys
 
 
 class FakeErratum(object):
