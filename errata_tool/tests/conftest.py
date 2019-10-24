@@ -1,13 +1,15 @@
 import json
 import os
-from errata_tool import ErrataConnector, Erratum
+import pytest
+import requests
+
 from errata_tool.build import Build
-from errata_tool.products import ProductList
+from errata_tool import ErrataConnector
+from errata_tool import Erratum
 from errata_tool.product import Product
 from errata_tool.product_version import ProductVersion
+from errata_tool.products import ProductList
 from errata_tool.release import Release
-import requests
-import pytest
 
 TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
 FIXTURES_DIR = os.path.join(TESTS_DIR, 'fixtures')

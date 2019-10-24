@@ -1,6 +1,7 @@
 import copy
 
-from errata_tool import ErrataException, ErrataConnector
+from errata_tool import ErrataConnector
+from errata_tool import ErrataException
 from errata_tool import security  # NOQA
 
 #

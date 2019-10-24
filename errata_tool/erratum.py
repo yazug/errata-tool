@@ -7,7 +7,10 @@ import six
 import textwrap
 import time
 
-from errata_tool import ErrataException, ErrataConnector, security, User
+from errata_tool import ErrataConnector
+from errata_tool import ErrataException
+from errata_tool import security
+from errata_tool import User
 
 
 class Erratum(ErrataConnector):

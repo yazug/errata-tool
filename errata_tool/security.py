@@ -3,7 +3,7 @@ import urllib3  # NOQA
 # import urllib3.exceptions as exceptions  # NOQA
 
 
-class SecurityParameters():
+class SecurityParameters(object):
     _warnings_disabled = False
     _verify_ssl = True
 

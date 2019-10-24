@@ -1,7 +1,7 @@
-from .exception import ErrataException
-from .connector import ErrataConnector
-from .user import User
-from .erratum import Erratum
+from .exception import ErrataException # noqa
+from .connector import ErrataConnector # noqa
+from .user import User # noqa
+from .erratum import Erratum # noqa
 
 __all__ = ['ErrataException', 'ErrataConnector', 'Erratum', 'User']
 

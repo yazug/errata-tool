@@ -1,12 +1,12 @@
 from __future__ import print_function
 from errata_tool import ErrataException
-import requests
-from requests_kerberos import HTTPKerberosAuth, DISABLED
+from requests_kerberos import HTTPKerberosAuth, DISABLED  # noqa
 from jsonpath_rw import parse
-import re
-import time
-import six
 import kerberos
+import re
+import requests
+import six
+import time
 
 
 class ErrataConnector(object):
