@@ -1,8 +1,9 @@
+import posixpath
+import sys
+
 from errata_tool.connector import ErrataConnector
 from errata_tool.release import NoReleaseFoundError
 from errata_tool.release import Release
-import posixpath
-import sys
 
 
 def add_parser(subparsers):
