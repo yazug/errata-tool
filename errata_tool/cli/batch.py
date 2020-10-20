@@ -11,12 +11,14 @@ def add_parser(subparsers):
 
     # "get"
     get_parser = sub.add_parser('get')
-    get_parser.add_argument('batch_name_or_id', help='batch name or id, "12345" or "<batch name>"')
+    get_parser.add_argument(
+        'batch_name_or_id', help='batch name or id, "12345" or "<batch name>"')
     get_parser.set_defaults(func=get)
 
     # "list"
     list_parser = sub.add_parser('list')
     list_parser.set_defaults(func=list_func)
+
 
 def get_errata_by_batch(connector, batch_name_or_id):
     """search for and return list of errata by name or id of batch"""
@@ -30,6 +32,7 @@ def get_errata_by_batch(connector, batch_name_or_id):
     data = connector.get_filter('/api/v1/batches', 'filter', **args)
 
     return data
+
 
 def get(args):
     et = ErrataConnector()
