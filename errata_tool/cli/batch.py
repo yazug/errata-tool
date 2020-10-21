@@ -2,7 +2,7 @@ from errata_tool.connector import ErrataConnector
 
 
 def add_parser(subparsers):
-    """Add our batcj parser to this top-level subparsers object. """
+    """Add our batch parser to this top-level subparsers object. """
     group = subparsers.add_parser('batch', help='Get batch Details')
 
     # advisory-level subcommands:
@@ -13,6 +13,9 @@ def add_parser(subparsers):
     get_parser = sub.add_parser('get')
     get_parser.add_argument(
         'batch_name_or_id', help='batch name or id, "12345" or "<batch name>"')
+    get_parser.add_argument('--summary', action='store_true',
+                            help="show a bit more details for each advisory"
+                            " and list of advisory ids")
     get_parser.set_defaults(func=get)
 
     # "list"
@@ -37,7 +40,22 @@ def get_errata_by_batch(connector, batch_name_or_id):
 def get(args):
     et = ErrataConnector()
     e = get_errata_by_batch(et, args.batch_name_or_id)
+
+    # show the raw json returned
     print(e)
+    if args.summary:
+        print("batch: {0} [{1}]".format(e['data'][0]['attributes']['name'], e['data'][0]['id']))
+
+        print("Release: {0} [{1}]".format(e['data'][0]['relationships']['release']['name'],
+            e['data'][0]['relationships']['release']['id']))
+
+        #errata_list = e['data'][0]['relationships']['errata']
+        #print(errata_list)
+        #errata_id_list = [ i for i in errata_list]
+        #print(errata_id_list)
+        id_list = [advisory['id'] for advisory in e['data'][0]['relationships']['errata']]
+        print("Advisories: " + ",".join([str(entry) for entry in id_list]))
+
 
 
 def list_func(args):
